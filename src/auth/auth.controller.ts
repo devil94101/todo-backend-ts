@@ -12,13 +12,13 @@ export class AuthController {
     async login(@Body() body: LoginDto, @Res() res) {
         try {
             let response = await this.authService.login(body.email, body.password);
-            res.cookie('refreshToken', response.refreshToken, {
-                httpOnly: true,
-                expires: new Date(Date.now() + (24 * 60 * 60 * 1000)),
-                sameSite: 'strict',
-                secure: true,
-                signed: true
-            })
+            // res.cookie('refreshToken', response.refreshToken, {
+            //     httpOnly: true,
+            //     expires: new Date(Date.now() + (24 * 60 * 60 * 1000)),
+            //     sameSite: 'strict',
+            //     secure: true,
+            //     signed: true
+            // })
             return successResponse(res, HttpStatus.OK, response.data)
         }
         catch (err) {
