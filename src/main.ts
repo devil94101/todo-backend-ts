@@ -13,6 +13,14 @@ async function bootstrap() {
  
   // app.setGlobalPrefix('api');
   app.use(cookieParser(process.env.COOKIE_SECRET));
+  app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://todo-ts-blue.vercel.app");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
   app.enableCors({ origin: '*', credentials: true });
   app.useGlobalPipes(new ValidationPipe());
 
