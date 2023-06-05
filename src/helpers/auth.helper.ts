@@ -2,7 +2,7 @@ import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken'
 
 import { HttpException, HttpStatus } from '@nestjs/common';
-import { JWTPayloadType } from 'src/utils/types/auth.types';
+import { JWTPayloadType } from '../utils/types/auth.types';
 
 export async function hashPassword(rawPassword: string) {
   const salt = await bcrypt.genSalt();

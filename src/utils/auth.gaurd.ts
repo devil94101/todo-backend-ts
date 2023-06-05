@@ -5,7 +5,7 @@ import {
     HttpStatus,
     HttpException,
   } from '@nestjs/common';
-import { compareJWT } from 'src/helpers/auth.helper';
+import { compareJWT } from '../helpers/auth.helper';
   
   @Injectable()
   export class AuthGuard implements CanActivate {

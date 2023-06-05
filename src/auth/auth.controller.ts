@@ -1,5 +1,5 @@
 import { Body, Controller, Get, HttpException, HttpStatus, Post, Req, Res } from '@nestjs/common';
-import { successResponse } from 'src/utils/responseHandler';
+import { successResponse } from '../utils/responseHandler';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 
