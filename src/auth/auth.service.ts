@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { compareJWT, createJWT } from '../helpers/auth.helper';
 import { IAuth } from './auth.interface';
-import * as userData from '../utils/userData.json'
+import userData from '../utils/userData.json'
 @Injectable()
 export class AuthService implements IAuth {
 
