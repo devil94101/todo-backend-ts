@@ -14,7 +14,7 @@ async function bootstrap() {
   // app.setGlobalPrefix('api');
   app.use(cookieParser(process.env.COOKIE_SECRET));
   app.enableCors({ origin: '*', credentials: true });
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe()); 
 
   try {
     await app.listen(PORT, () => console.log(`Running on Port ${PORT}`));
